@@ -1,0 +1,11 @@
+import { Link, Outlet } from "react-router";
+import Nav from "./Nav";
+
+export default function Layout() {
+  return (
+    <div className='min-h-screen'>
+        <Nav />
+        <Outlet />
+    </div>
+  )
+}
