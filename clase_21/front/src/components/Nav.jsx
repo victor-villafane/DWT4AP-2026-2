@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router'
+import { contexto } from '../context/session.context'
 
 export default function Nav() {
 
     const usuario = JSON.parse(localStorage.getItem("usuario"))
-
+    const nombre = useContext(contexto)
+    console.log(nombre) 
     return (
         <nav className='bg-gray-100 sticky top-0 z-40 w-full flex items-center justify-between p-5' >
             <div className='flex items-center space-x-1 sm:space-x-3' >

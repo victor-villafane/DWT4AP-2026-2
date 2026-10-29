@@ -1,4 +1,4 @@
-import { StrictMode, lazy } from 'react'
+import { StrictMode, createContext, lazy, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 // import App from './pages/App.jsx'
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/juegos/:id",
-        element: <ProtectedRoute rol={["superadmin","admin", "user"]} element={<Detalle />} />
+        element: <ProtectedRoute rol={["superadmin", "admin", "user"]} element={<Detalle />} />
       },
       {
         path: "/login",
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />
-      },      
+      },
       {
         path: "/nuevo-juego",
         element: <ProtectedRoute rol={["superadmin", "admin"]} element={<NuevoJuego />} />
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
       {
         path: "/eliminar-juego/:id",
         element: <ProtectedRoute rol={["superadmin", "admin"]} element={<EliminarJuego />} />
-      }      
+      }
     ]
   },
   {
@@ -72,8 +72,12 @@ const router = createBrowserRouter([
   }
 ]);
 
+import { SessionProvider } from './context/session.context.jsx';
+
 createRoot(document.getElementById('root')).render(
   // <StrictMode>
-  <RouterProvider router={router} />
+  <SessionProvider>
+    <RouterProvider router={router} />
+  </SessionProvider>
   // </StrictMode>,
 )
