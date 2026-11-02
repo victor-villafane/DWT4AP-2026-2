@@ -1,0 +1,22 @@
+[
+    {
+        "id": "1",
+        "nombre": "half life",
+        "precio": 100
+    },
+    {
+        "id": "2",
+        "nombre": "Fifa 2026",
+        "precio": 1230
+    },
+    {
+        "id": "3",
+        "nombre": "minecraft",
+        "precio": 500
+    },
+    {
+        "id": "4",
+        "nombre": "Terraria",
+        "precio": 200
+    }
+]
